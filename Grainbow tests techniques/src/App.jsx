@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import FarmerList from "./components/FarmerList.jsx";
+import CerealList from "./components/CerealList.jsx";
+import ContributionForm from "./components/ContributionForm.jsx";
+import ContributionList from "./components/ContributionList.jsx";
+import data from "./components/data";
+import SideBar from "./components/SideBar.jsx";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const {
+    contribution: { defaultContributionList },
+    farmer: { defaultFarmerList },
+    cereal: { defaultCerealList },
+  } = data;
+  const [farmers, setFarmers] = useState(defaultFarmerList);
+  const [cereals, setCereals] = useState(defaultCerealList);
+  const [contributions, setContributions] = useState(defaultContributionList);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className="sidebar_container">
+        <SideBar />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="infos_container">
+        <h1>Grainbow</h1>
+        <FarmerList farmers={farmers} setFarmers={setFarmers} />
+        <CerealList cereals={cereals} setCereals={setCereals} />
+        <ContributionList
+          contributions={contributions}
+          setContributions={setContributions}
+        />
+        <ContributionForm
+          contributions={contributions}
+          setContributions={setContributions}
+          farmers={farmers}
+          cereals={cereals}
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
