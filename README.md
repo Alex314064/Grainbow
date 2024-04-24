@@ -2,7 +2,6 @@ Bonjour et merci d'avoir pris le temps de rédiger ces tests (qui m'ont encore p
 
 - Le document PDF contenant les requêtes SQL sous chacune des questions.
 - Le projet en React/vite que vous pouvez lancer avec ces commandes:
-  - npm / yarn install vite
   - npm / yarn install
   - npm / yarn run dev
 
