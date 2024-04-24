@@ -1,4 +1,10 @@
-const ContributionList = ({ contributions, setContributions }) => {
+const ContributionList = ({
+  contributions,
+  addContribution,
+  updateContribution,
+  deleteContribution,
+  setContributions,
+}) => {
   const handleDelete = (index) => {
     const newContributions = [...contributions];
     newContributions.splice(index, 1);

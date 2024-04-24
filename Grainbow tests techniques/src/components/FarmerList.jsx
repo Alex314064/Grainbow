@@ -1,7 +1,13 @@
 import { useState } from "react";
 import data from "./data";
 
-const FarmerList = ({ farmers, setFarmers }) => {
+const FarmerList = ({
+  farmers,
+  addFarmer,
+  updateFarmer,
+  deleteFarmer,
+  setFarmers,
+}) => {
   const defaultFarmer = data.farmer.defaultFarmer;
   const [newFarmer, setNewFarmer] = useState(defaultFarmer);
   const [showForm, setShowForm] = useState(false);

@@ -1,7 +1,13 @@
 import { useState } from "react";
 import data from "./data.jsx";
 
-const CerealList = ({ cereals, setCereals }) => {
+const CerealList = ({
+  cereals,
+  addCereal,
+  updateCereal,
+  deleteCereal,
+  setCereals,
+}) => {
   const defaultCereal = data.cereal.defaultCereal;
   const [newCereal, setNewCereal] = useState(defaultCereal);
   const [showForm, setShowForm] = useState(false);
