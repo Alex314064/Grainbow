@@ -19,27 +19,27 @@ const data = {
       {
         farmer: "Jean Dupont",
         cereal: "Blé",
-        weight: 100,
+        weight: 10,
       },
       {
         farmer: "Jean Dupont",
         cereal: "Maïs",
-        weight: 150,
+        weight: 15,
       },
       {
         farmer: "Marie Martin",
         cereal: "Riz",
-        weight: 200,
+        weight: 20,
       },
       {
         farmer: "Marie Martin",
         cereal: "Blé",
-        weight: 120,
+        weight: 12,
       },
       {
         farmer: "Marie Martin",
         cereal: "Maïs",
-        weight: 180,
+        weight: 18,
       },
     ],
     defaultContribution: { farmer: "", cereal: "", weight: "" },

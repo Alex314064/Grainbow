@@ -1,5 +1,5 @@
 import { useState } from "react";
-import data from "./data";
+import data from "../MockAPI/data";
 
 const ContributionForm = ({
   contributions,
@@ -13,26 +13,21 @@ const ContributionForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(contributions);
-    console.log(formData);
     setContributions([...contributions, { ...formData }]);
     setFormData(data.contribution.defaultContribution);
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData({ ...formData, [name]: value });
-    console.log(formData);
   };
 
   return (
     <div>
-      <h2>Ajouter un Contribution</h2>
+      <h2>Ajouter un apport</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            Agriculteur :
             <select
               name="farmer"
               value={formData.farmer}
@@ -50,7 +45,6 @@ const ContributionForm = ({
         </div>
         <div>
           <label>
-            Céréale :
             <select
               name="cereal"
               value={formData.cereal}
@@ -68,17 +62,21 @@ const ContributionForm = ({
         </div>
         <div>
           <label>
-            Poids (en kg) :
             <input
               type="number"
               name="weight"
+              placeholder=" Poids en tonnes"
               value={formData.weight}
               onChange={handleChange}
               required
             />
           </label>
         </div>
-        <button type="submit">Ajouter</button>
+        <div>
+          <button className="validate-btn" type="submit">
+            Valider
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -1,8 +1,17 @@
+body,html,#root {
+    width: 100%;
+    height: 100%;
+}
 
+h2{
+  width: 20rem;
+  margin: auto;
+}
 
-
+/* SIDEBAR */
 .sidebar_container {
     position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 30%;
@@ -10,19 +19,161 @@
     background: linear-gradient(to top, rgb(36,60,148), rgb(32,70,158), #ffffff);
 }
 
+nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
 nav ul {
-  list-style-type: none;
+  width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+margin: auto;
 }
 
 .nav-item {
-  color: red
+  color: whitesmoke;
+  cursor: pointer;
+  margin: 1rem;
+  padding: 1rem;
+  width: 5rem;
+  border: solid 2px whitesmoke;
+  border-radius:  9px;
+  text-align: center;
 }
 
+.nav-item:hover{
+  scale: 1.2;
+}
+
+/* COMPOSANTS */
+
 .infos_container{
-    display: flex;
-    position: fixed;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+  right: 0;
+  top:0;
+  background: linear-gradient(to top, rgb(223, 233, 255), #ffffff);
+}
+
+.infos_container h1{
+  background: linear-gradient(to left, rgb(36,60,148), rgb(32,70,158), #ffffff);
+  width: 100%;
+  margin-top: 0;
+  padding: 1rem;
+  font-size: 3rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.composant-container{
+  margin-top: 12rem;
     flex-direction: column;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    width: 70%;
-    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.composant-container h2{
+  padding: 2rem;
+}
+
+.composant-container ul{
+  padding: 0;
+}
+
+.composant-container li{
+display: flex;
+flex-direction: row;
+align-items: baseline;
+margin-right: 2rem;
+margin-bottom: 2rem;
+width: 100%;
+}
+
+.list-item{
+ display: flex;
+flex-direction: row;
+align-items: baseline;
+width: 100%;
+}
+
+/* BUTTONS */
+
+button{
+  border: none;
+  color: white;
+  border: solid 2px white;
+  padding: 15px 32px;
+  margin:0.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 4px;
+}
+
+button.validate-btn {
+  background-color: #04AA6D;
+}
+
+.validate-btn:hover {
+  background-color: white; /* Green */
+  color: #04AA6D;
+  border: solid 2px #04AA6D
+}
+
+.modify-btn{
+  background-color: #008CBA;
+}
+.modify-btn:hover {
+  background-color: white; /* Green */
+  color: #008CBA;
+  border: solid 2px #008CBA
+}
+
+.delete-btn{
+  background-color: #f44336;
+}
+.delete-btn:hover {
+  background-color: white; /* Green */
+  color: #f44336;
+  border: solid 2px #f44336
+}
+
+/* FORM INPUT SELECT*/
+
+select{
+  width: 20rem;
+  margin:0.5rem
+}
+
+input{
+  margin:0.5rem
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }

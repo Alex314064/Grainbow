@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import FarmerList from "./components/FarmerList.jsx";
-import CerealList from "./components/CerealList.jsx";
-import ContributionList from "./components/ContributionList.jsx";
-import ContributionForm from "./components/ContributionForm.jsx";
-import SideBar from "./components/SideBar.jsx";
+import FarmerList from "./components/Farmer/FarmerList.jsx";
+import CerealList from "./components/Cereals/CerealList.jsx";
+import ContributionList from "./components/Contribution/ContributionList.jsx";
+import SideBar from "./components/SideBar/SideBar.jsx";
 import "./App.css";
-import data from "./components/data";
+import data from "./components/MockAPI/data.jsx";
 
 function App() {
   const {
@@ -25,7 +24,7 @@ function App() {
         <SideBar setSelectedComponent={setSelectedComponent} />
       </div>
       <div className="infos_container">
-        <h1>Grainbow</h1>
+        <h1>Grainbow tests techniques</h1>
         {selectedComponent === "farmers" && (
           <FarmerList
             farmers={farmers}
@@ -41,15 +40,11 @@ function App() {
           />
         )}
         {selectedComponent === "contributions" && (
-          <div>
+          <div className="composant-container">
             <ContributionList
               contributions={contributions}
               setContributions={setContributions}
               defaultContributionList={defaultContributionList}
-            />
-            <ContributionForm
-              contributions={contributions}
-              setContributions={setContributions}
               farmers={farmers}
               cereals={cereals}
             />
